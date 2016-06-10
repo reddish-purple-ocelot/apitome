@@ -43,7 +43,7 @@ class Apitome::DocsController < ActionController::Base
 
       file = "#{Apitome.configuration.remote_url}/#{file}"
     else
-      file = Apitome.configuration.root.join(Apitome.configuration.doc_path, file)
+      file = Apitome.configuration.root.join(Apitome.configuration.doc_path)
       raise Apitome::FileNotFoundError.new("Unable to find #{file}") unless File.exists?(file)
     end
 
